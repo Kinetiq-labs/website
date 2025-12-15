@@ -1,0 +1,119 @@
+/* ====================================
+   KINETIQ - COLOR THEME
+   Professional Automation Agency
+   "ALWAYS IN MOTION"
+   ==================================== */
+
+:root {
+  /* === PRIMARY COLORS === */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+
+  /* === GREY SCALE (Motion Gradient from Logo) === */
+  --color-grey-900: #1A1A1A;  /* Almost Black */
+  --color-grey-800: #2D2D2D;  /* Dark Grey */
+  --color-grey-700: #404040;  /* Darker Medium */
+  --color-grey-600: #5C5C5C;  /* Medium Dark */
+  --color-grey-500: #808080;  /* True Medium Grey */
+  --color-grey-400: #9E9E9E;  /* Medium Light */
+  --color-grey-300: #BDBDBD;  /* Light Grey */
+  --color-grey-200: #D4D4D4;  /* Lighter Grey */
+  --color-grey-100: #E8E8E8;  /* Very Light */
+  --color-grey-50: #F5F5F5;   /* Off White */
+
+  /* === ACCENT COLORS (For CTAs and highlights) === */
+  --color-accent-primary: #3B82F6;    /* Professional Blue */
+  --color-accent-secondary: #06B6D4;  /* Cyan for tech feel */
+  --color-accent-success: #10B981;    /* Green for success states */
+  --color-accent-warning: #F59E0B;    /* Amber for warnings */
+
+  /* === BACKGROUND COLORS === */
+  --bg-primary: #000000;
+  --bg-secondary: #0A0A0A;
+  --bg-tertiary: #1A1A1A;
+  --bg-light: #FFFFFF;
+  --bg-light-secondary: #F5F5F5;
+  --bg-card: #141414;
+  --bg-card-hover: #1F1F1F;
+
+  /* === TEXT COLORS === */
+  --text-primary: #FFFFFF;
+  --text-secondary: #BDBDBD;
+  --text-tertiary: #808080;
+  --text-inverse: #000000;
+  --text-on-light: #1A1A1A;
+
+  /* === BORDER COLORS === */
+  --border-primary: #2D2D2D;
+  --border-secondary: #404040;
+  --border-light: #E8E8E8;
+  --border-accent: #3B82F6;
+
+  /* === OVERLAY & SHADOW === */
+  --overlay-dark: rgba(0, 0, 0, 0.7);
+  --overlay-darker: rgba(0, 0, 0, 0.9);
+  --overlay-light: rgba(255, 255, 255, 0.1);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+
+  /* === GRADIENT (Motion Effect) === */
+  --gradient-motion: linear-gradient(135deg,
+    var(--color-grey-800) 0%,
+    var(--color-grey-600) 25%,
+    var(--color-grey-400) 50%,
+    var(--color-grey-200) 75%,
+    var(--color-white) 100%);
+
+  --gradient-dark: linear-gradient(180deg,
+    var(--color-black) 0%,
+    var(--color-grey-900) 100%);
+
+  --gradient-accent: linear-gradient(135deg,
+    var(--color-accent-primary) 0%,
+    var(--color-accent-secondary) 100%);
+
+  --gradient-overlay: linear-gradient(180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* === LIGHT MODE (Optional Alternative) === */
+[data-theme="light"] {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --bg-tertiary: #E8E8E8;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F5F5F5;
+
+  --text-primary: #1A1A1A;
+  --text-secondary: #404040;
+  --text-tertiary: #808080;
+  --text-inverse: #FFFFFF;
+
+  --border-primary: #E8E8E8;
+  --border-secondary: #D4D4D4;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === UTILITY CLASSES === */
+.bg-dark { background-color: var(--bg-primary); }
+.bg-darker { background-color: var(--bg-secondary); }
+.bg-light { background-color: var(--bg-light); }
+.bg-card { background-color: var(--bg-card); }
+.bg-gradient-motion { background: var(--gradient-motion); }
+.bg-gradient-dark { background: var(--gradient-dark); }
+.bg-gradient-accent { background: var(--gradient-accent); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-accent { color: var(--color-accent-primary); }
+
+.border-primary { border-color: var(--border-primary); }
+.border-accent { border-color: var(--border-accent); }
