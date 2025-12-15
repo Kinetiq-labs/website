@@ -47,7 +47,7 @@ const CTASection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-text-secondary mb-10 leading-relaxed"
           >
-            Let's discuss how our automation solutions can help you achieve your goals.
+            Let&apos;s discuss how our automation solutions can help you achieve your goals.
             Get in touch with our team today for a free consultation.
           </motion.p>
 
