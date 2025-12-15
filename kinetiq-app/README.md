@@ -194,7 +194,7 @@ colors: {
 ## Contact
 
 - Email: info@kinetiq.site
-- Website: [kinetiq.com](https://kinetiq.site)
+- Website: [kinetiq.site](https://kinetiq.site)
 
 ---
 
