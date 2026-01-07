@@ -3,11 +3,18 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, use } from "react";
+import { useEffect, useRef, use, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LogoLoop from "@/app/components/LogoLoop";
 
 gsap.registerPlugin(ScrollTrigger);
+
+interface TechLogo {
+    src: string;
+    alt: string;
+    title?: string;
+}
 
 interface ProjectData {
     slug: string;
@@ -19,6 +26,7 @@ interface ProjectData {
         months: string[];
     };
     screenshots: string[];
+    techStack: TechLogo[];
 }
 
 const projectsData: ProjectData[] = [
@@ -39,6 +47,13 @@ const projectsData: ProjectData[] = [
             "/lqg/lqfg-1.png",
             "/lqg/lqg-2.png",
             "/lqg/lqg-3.png"
+        ],
+        techStack: [
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", alt: "Next.js", title: "Next.js" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React", title: "React" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", alt: "TypeScript", title: "TypeScript" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", alt: "Tailwind CSS", title: "Tailwind CSS" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg", alt: "Supabase", title: "Supabase" }
         ]
     },
     {
@@ -59,6 +74,71 @@ const projectsData: ProjectData[] = [
             "/records/2.png",
             "/records/3.png",
             "/records/4.png"
+        ],
+        techStack: [
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg", alt: "Electron", title: "Electron" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React", title: "React" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", alt: "JavaScript", title: "JavaScript" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg", alt: "SQLite", title: "SQLite" }
+        ]
+    },
+    {
+        slug: "construction-management-system",
+        title: "Construction Management System",
+        tagline: "Time Lapse Scope & Feature for Construction Site Review",
+        description: [
+            "The Construction Management System is an innovative solution designed to monitor and document construction site progress through automated time-lapse photography and computer vision technology. The system provides stakeholders with visual progress reports and intelligent analysis of construction activities.",
+            "Key features include automated camera scheduling, time-lapse video generation, progress tracking dashboards, and AI-powered anomaly detection. The platform enables project managers to review site conditions remotely, identify potential issues early, and maintain comprehensive visual documentation throughout the project lifecycle.",
+            "Built with a modern tech stack combining computer vision capabilities with web technologies, the system delivers real-time insights and historical analysis to streamline construction project oversight and improve decision-making."
+        ],
+        timeline: {
+            duration: "Ongoing",
+            months: ["October 2025", "Present"]
+        },
+        screenshots: [
+            "/construction/WhatsApp Image 2025-10-09 at 7.36.09 PM.jpeg",
+            "/construction/WhatsApp Image 2025-10-09 at 7.36.48 PM.jpeg",
+            "/construction/WhatsApp Image 2025-10-09 at 7.37.08 PM.jpeg",
+            "/construction/WhatsApp Image 2025-10-09 at 7.37.33 PM.jpeg",
+            "/construction/WhatsApp Image 2025-10-09 at 7.37.53 PM.jpeg",
+            "/construction/WhatsApp Image 2025-10-09 at 7.38.10 PM.jpeg",
+            "/construction/WhatsApp Image 2025-10-09 at 7.38.36 PM.jpeg"
+        ],
+        techStack: [
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", alt: "Python", title: "Python" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg", alt: "Computer Vision", title: "Computer Vision (OpenCV)" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React", title: "React" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg", alt: "Flask", title: "Flask" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg", alt: "Supabase", title: "Supabase" }
+        ]
+    },
+    {
+        slug: "live-chat-assistant",
+        title: "Live Chat Assistant",
+        tagline: "Real-time Customer Support Solution",
+        description: [
+            "Live Chat Assistant is a comprehensive real-time customer support platform designed to enhance customer engagement and streamline support operations. The system enables businesses to provide instant, personalized assistance to their customers through an intuitive chat interface.",
+            "Key features include real-time messaging, automated responses, conversation history, agent assignment, and analytics dashboard. The platform supports multiple concurrent conversations, allowing support teams to efficiently manage customer inquiries while maintaining high-quality service standards.",
+            "Built with modern web technologies, the Live Chat Assistant integrates seamlessly with existing business workflows and provides valuable insights into customer interactions, helping businesses improve their support strategies and customer satisfaction."
+        ],
+        timeline: {
+            duration: "Ongoing",
+            months: ["December 2025", "Present"]
+        },
+        screenshots: [
+            "/Live_Chat_Assistant/WhatsApp Image 2026-01-08 at 3.16.22 PM.jpeg",
+            "/Live_Chat_Assistant/WhatsApp Image 2026-01-08 at 3.16.22 PM (1).jpeg",
+            "/Live_Chat_Assistant/WhatsApp Image 2026-01-08 at 3.16.23 PM.jpeg",
+            "/Live_Chat_Assistant/WhatsApp Image 2026-01-08 at 3.16.23 PM (1).jpeg",
+            "/Live_Chat_Assistant/WhatsApp Image 2026-01-08 at 3.16.23 PM (2).jpeg",
+            "/Live_Chat_Assistant/WhatsApp Image 2026-01-08 at 3.16.23 PM (3).jpeg"
+        ],
+        techStack: [
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React", title: "React" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", alt: "Node.js", title: "Node.js" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", alt: "TypeScript", title: "TypeScript" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg", alt: "Socket.io", title: "Socket.io" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg", alt: "Supabase", title: "Supabase" }
         ]
     }
 ];
@@ -67,6 +147,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
     const { slug } = use(params);
     const project = projectsData.find((p) => p.slug === slug);
     const timelineRef = useRef<HTMLDivElement>(null);
+    const [currentScreenshot, setCurrentScreenshot] = useState(0);
 
     useEffect(() => {
         if (timelineRef.current && project) {
@@ -150,21 +231,71 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
                     </div>
                 </section>
 
-                {/* Screenshots */}
+                {/* Screenshots Slider */}
                 <section className="project-screenshots-section">
                     <h2 className="section-subheading">Screenshots</h2>
-                    <div className="screenshots-grid">
-                        {project.screenshots.map((src, index) => (
-                            <div key={index} className="screenshot-wrapper">
-                                <Image
-                                    src={src}
-                                    alt={`${project.title} screenshot ${index + 1}`}
-                                    width={800}
-                                    height={500}
-                                    className="screenshot-image"
-                                />
-                            </div>
+
+                    <div className="screenshots-slider-container">
+                        <div
+                            className="screenshots-slider"
+                            style={{ transform: `translateX(-${currentScreenshot * 100}%)` }}
+                        >
+                            {project.screenshots.map((src, index) => (
+                                <div key={index} className="screenshot-slide">
+                                    <Image
+                                        src={src}
+                                        alt={`${project.title} screenshot ${index + 1}`}
+                                        width={800}
+                                        height={500}
+                                        className="screenshot-image"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Navigation Arrows */}
+                    <div className="screenshots-nav">
+                        <button
+                            className="screenshot-nav-btn"
+                            onClick={() => setCurrentScreenshot(prev => prev === 0 ? project.screenshots.length - 1 : prev - 1)}
+                        >
+                            ←
+                        </button>
+                        <button
+                            className="screenshot-nav-btn"
+                            onClick={() => setCurrentScreenshot(prev => prev === project.screenshots.length - 1 ? 0 : prev + 1)}
+                        >
+                            →
+                        </button>
+                    </div>
+
+                    {/* Dot Indicators */}
+                    <div className="screenshots-dots">
+                        {project.screenshots.map((_, i) => (
+                            <button
+                                key={i}
+                                className={`screenshot-dot ${currentScreenshot === i ? 'active' : ''}`}
+                                onClick={() => setCurrentScreenshot(i)}
+                            />
                         ))}
+                    </div>
+                </section>
+
+                {/* Tech Stack */}
+                <section className="project-techstack-section">
+                    <h2 className="section-subheading">Tech Stack</h2>
+                    <div className="techstack-container">
+                        <LogoLoop
+                            logos={project.techStack}
+                            speed={60}
+                            logoHeight={40}
+                            gap={48}
+                            pauseOnHover={true}
+                            fadeOut={true}
+                            fadeOutColor="#ffffff"
+                            ariaLabel="Technologies used in this project"
+                        />
                     </div>
                 </section>
             </div>

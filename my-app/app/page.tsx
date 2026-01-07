@@ -310,17 +310,23 @@ export default function Home() {
 
               <div className="projects-right">
                 <div className="projects-grid">
-                  <div className="project-row">
-                    <h3 className="project-title">01 Learn Quran Global</h3>
-                  </div>
+                  <Link href="/projects/learn-quran-global" className="project-row-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div className="project-row">
+                      <h3 className="project-title">01 Learn Quran Global</h3>
+                    </div>
+                  </Link>
 
-                  <div className="project-row">
-                    <h3 className="project-title">02 Records</h3>
-                  </div>
+                  <Link href="/projects/records" className="project-row-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div className="project-row">
+                      <h3 className="project-title">02 Records</h3>
+                    </div>
+                  </Link>
 
-                  <div className="project-row">
-                    <h3 className="project-title">03 Construction Site Management</h3>
-                  </div>
+                  <Link href="/projects/construction-management-system" className="project-row-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div className="project-row">
+                      <h3 className="project-title">03 Construction Site Management</h3>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
