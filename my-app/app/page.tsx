@@ -78,6 +78,11 @@ export default function Home() {
 
   useGSAP(
     () => {
+      // Only run card stacking animation on desktop (wider than 768px)
+      if (window.innerWidth <= 768) {
+        return;
+      }
+
       const cards = gsap.utils.toArray<HTMLElement>(".stackalicious-card");
       const navbar = document.querySelector(".navbar") as HTMLElement | null;
 
@@ -212,26 +217,30 @@ export default function Home() {
             <div className="hero-headline">
               <div className="hero-statement">
                 <SplitText text="Building" tag="span" className="hero-line" />
-                <div className={`hero-link ${showUnderline1 ? "show-underline" : ""}`}>
-                  <SplitText
-                    text="Intelligent Systems"
-                    tag="span"
-                    className="hero-line hero-link-text"
-                  />
-                  <span className="arrow-icon">↗</span>
-                </div>
+                <Link href="/products" style={{ textDecoration: 'none' }}>
+                  <div className={`hero-link ${showUnderline1 ? "show-underline" : ""}`}>
+                    <SplitText
+                      text="Intelligent Systems"
+                      tag="span"
+                      className="hero-line hero-link-text"
+                    />
+                    <span className="arrow-icon">↗</span>
+                  </div>
+                </Link>
               </div>
 
               <div className="hero-statement">
                 <SplitText text="That Drive" tag="span" className="hero-line" />
-                <div className={`hero-link ${showUnderline2 ? "show-underline" : ""}`}>
-                  <SplitText
-                    text="Businesses Forward"
-                    tag="span"
-                    className="hero-line hero-link-text"
-                  />
-                  <span className="arrow-icon">↗</span>
-                </div>
+                <Link href="/projects" style={{ textDecoration: 'none' }}>
+                  <div className={`hero-link ${showUnderline2 ? "show-underline" : ""}`}>
+                    <SplitText
+                      text="Businesses Forward"
+                      tag="span"
+                      className="hero-line hero-link-text"
+                    />
+                    <span className="arrow-icon">↗</span>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
