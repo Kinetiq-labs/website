@@ -1,19 +1,31 @@
+import Link from "next/link";
+
+interface Product {
+    number: string;
+    title: string;
+    description: string;
+    slug: string;
+}
+
 export default function ProductsPage() {
-    const products = [
+    const products: Product[] = [
         {
             number: "01",
             title: "Synapse",
-            description: "Document Intelligent System for Large Corpus"
+            description: "RAG-Based Knowledge & Analytics Platform",
+            slug: "synapse"
         },
         {
             number: "02",
-            title: "Khedma AI",
-            description: "Job Searching and Applying Automation Tool"
+            title: "Khedmi AI",
+            description: "AI-Driven Autonomous Career Assistant",
+            slug: "khedmi-ai"
         },
         {
             number: "03",
             title: "Agentic Web Navigator",
-            description: "AI-Powered Web Navigation and Automation Agent"
+            description: "AI-Powered Web Navigation and Automation Agent",
+            slug: "agentic-web-navigator"
         },
     ];
 
@@ -25,13 +37,15 @@ export default function ProductsPage() {
 
                 <div className="projects-page-list">
                     {products.map((product) => (
-                        <div key={product.number} className="projects-page-row">
-                            <span className="projects-page-number">{product.number}</span>
-                            <div className="projects-page-info">
-                                <h2 className="projects-page-title">{product.title}</h2>
-                                <p className="projects-page-description">{product.description}</p>
+                        <Link href={`/products/${product.slug}`} key={product.slug} className="projects-page-row-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                            <div className="projects-page-row">
+                                <span className="projects-page-number">{product.number}</span>
+                                <div className="projects-page-info">
+                                    <h2 className="projects-page-title">{product.title}</h2>
+                                    <p className="projects-page-description">{product.description}</p>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

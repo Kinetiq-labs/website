@@ -21,6 +21,7 @@ interface ProjectData {
     title: string;
     tagline: string;
     description: string[];
+    features: string[];
     timeline: {
         duration: string;
         months: string[];
@@ -54,6 +55,14 @@ const projectsData: ProjectData[] = [
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", alt: "TypeScript", title: "TypeScript" },
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", alt: "Tailwind CSS", title: "Tailwind CSS" },
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg", alt: "Supabase", title: "Supabase" }
+        ],
+        features: [
+            "Student registration and profile management",
+            "Qualified teacher profiles and scheduling",
+            "Real-time class booking system",
+            "Progress tracking and performance analytics",
+            "Secure payment integration",
+            "Intuitive interface for all ages"
         ]
     },
     {
@@ -80,6 +89,14 @@ const projectsData: ProjectData[] = [
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React", title: "React" },
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", alt: "JavaScript", title: "JavaScript" },
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg", alt: "SQLite", title: "SQLite" }
+        ],
+        features: [
+            "Customer profile management",
+            "Credit and debit transaction tracking",
+            "Automatic balance calculations",
+            "Detailed financial reporting",
+            "Transaction history and search",
+            "Data backup and recovery"
         ]
     },
     {
@@ -110,6 +127,14 @@ const projectsData: ProjectData[] = [
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React", title: "React" },
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg", alt: "Flask", title: "Flask" },
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg", alt: "Supabase", title: "Supabase" }
+        ],
+        features: [
+            "Automated time-lapse photography",
+            "AI-powered anomaly detection",
+            "Progress tracking dashboards",
+            "Remote site condition monitoring",
+            "Visual documentation archive",
+            "Real-time progress reports"
         ]
     },
     {
@@ -139,6 +164,14 @@ const projectsData: ProjectData[] = [
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", alt: "TypeScript", title: "TypeScript" },
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg", alt: "Socket.io", title: "Socket.io" },
             { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg", alt: "Supabase", title: "Supabase" }
+        ],
+        features: [
+            "Real-time messaging system",
+            "Automated response templates",
+            "Conversation history tracking",
+            "Smart agent assignment",
+            "Analytics and reporting dashboard",
+            "Multi-conversation management"
         ]
     }
 ];
@@ -148,6 +181,18 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
     const project = projectsData.find((p) => p.slug === slug);
     const timelineRef = useRef<HTMLDivElement>(null);
     const [currentScreenshot, setCurrentScreenshot] = useState(0);
+
+    // Auto-timer for screenshot slider
+    useEffect(() => {
+        if (project && project.screenshots.length > 1) {
+            const timer = setInterval(() => {
+                setCurrentScreenshot(prev =>
+                    prev === project.screenshots.length - 1 ? 0 : prev + 1
+                );
+            }, 3500);
+            return () => clearInterval(timer);
+        }
+    }, [project]);
 
     useEffect(() => {
         if (timelineRef.current && project) {
@@ -213,6 +258,21 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
                     ))}
                 </section>
 
+                {/* Features */}
+                {project.features.length > 0 && (
+                    <section className="project-features-section">
+                        <h2 className="section-subheading">Key Features</h2>
+                        <div className="features-grid">
+                            {project.features.map((feature, index) => (
+                                <div key={index} className="feature-card">
+                                    <span className="feature-number">{String(index + 1).padStart(2, '0')}</span>
+                                    <p className="feature-text">{feature}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
                 {/* Timeline */}
                 <section className="project-timeline-section">
                     <h2 className="section-subheading">Project Timeline</h2>
@@ -233,7 +293,6 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
 
                 {/* Screenshots Slider */}
                 <section className="project-screenshots-section">
-                    <h2 className="section-subheading">Screenshots</h2>
 
                     <div className="screenshots-slider-container">
                         <div

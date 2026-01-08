@@ -394,17 +394,23 @@ export default function Home() {
 
               <div className="products-right">
                 <div className="products-grid">
-                  <div className="product-row">
-                    <h3 className="product-name">01 Synapse</h3>
-                  </div>
+                  <Link href="/products/synapse" className="product-row-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div className="product-row">
+                      <h3 className="product-name">01 Synapse</h3>
+                    </div>
+                  </Link>
 
-                  <div className="product-row">
-                    <h3 className="product-name">02 Khedma AI</h3>
-                  </div>
+                  <Link href="/products/khedmi-ai" className="product-row-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div className="product-row">
+                      <h3 className="product-name">02 Khedmi AI</h3>
+                    </div>
+                  </Link>
 
-                  <div className="product-row">
-                    <h3 className="product-name">03 Agentic Web Navigator</h3>
-                  </div>
+                  <Link href="/products/agentic-web-navigator" className="product-row-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div className="product-row">
+                      <h3 className="product-name">03 Agentic Web Navigator</h3>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
