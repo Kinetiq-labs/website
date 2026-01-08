@@ -10,6 +10,11 @@ export default function ProductsPage() {
             title: "Khedma AI",
             description: "Job Searching and Applying Automation Tool"
         },
+        {
+            number: "03",
+            title: "Agentic Web Navigator",
+            description: "AI-Powered Web Navigation and Automation Agent"
+        },
     ];
 
     return (

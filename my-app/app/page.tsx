@@ -401,6 +401,10 @@ export default function Home() {
                   <div className="product-row">
                     <h3 className="product-name">02 Khedma AI</h3>
                   </div>
+
+                  <div className="product-row">
+                    <h3 className="product-name">03 Agentic Web Navigator</h3>
+                  </div>
                 </div>
               </div>
             </div>
